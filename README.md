@@ -10,8 +10,6 @@ Este projeto demonstra a configuração de uma rede corporativa no **GNS3**, uti
 - 🔒 **ACLs** - Controle de acesso
 - 🌐 **NAT** - Tradução de endereços
 
-## 🔧 Topologia da Rede
-![(Topol.png)](https://github.com/kaua7k/Testes/blob/main/Topol.jpg)
 
 ## 🚀 Configuração Passo a Passo
 
@@ -48,3 +46,7 @@ access-list 1 permit 192.168.1.0 0.0.0.255
 Esta simulação permite testar conceitos avançados de redes e pode ser expandida com firewalls, VPNs e monitoramento. Teste as configurações e ajuste conforme sua necessidade!
 
 🔗 **Conecte-se comigo:** [LinkedIn](https://www.linkedin.com/in/kaua7k/) 🚀
+
+## 🔧 Topologia da Rede
+![(Topol.png)](https://github.com/kaua7k/Testes/blob/main/Topol.jpg)
+
