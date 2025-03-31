@@ -11,7 +11,7 @@ Este projeto demonstra a configuração de uma rede corporativa no **GNS3**, uti
 - 🌐 **NAT** - Tradução de endereços
 
 ## 🔧 Topologia da Rede
-(Adicionar um diagrama da rede aqui)
+!(Topol.png)
 
 ## 🚀 Configuração Passo a Passo
 
