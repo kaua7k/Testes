@@ -1,9 +1,36 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.2.1">
-  <diagram name="Página-1" id="XD17_NkLn0mmKFVipbs6">
+<mxfile>
+  <diagram name="Página-1">
     <mxGraphModel>
       <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Internet" style="shape=cloud;whiteSpace=wrap;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="160" y="40" width="120" height="80"/>
+        </mxCell>
+        <mxCell id="3" value="Roteador Gateway&#xa;NAT/ACL/OSPF" style="shape=router;whiteSpace=wrap" parent="1" vertex="1">
+          <mxGeometry x="180" y="160" width="80" height="80"/>
+        </mxCell>
+        <mxCell id="4" source="2" target="3" parent="1" edge="1"/>
+        <mxCell id="5" value="Switch L3&#xa;VLAN 10/20&#xa;OSPF" style="shape=switch;whiteSpace=wrap" parent="1" vertex="1">
+          <mxGeometry x="180" y="280" width="80" height="80"/>
+        </mxCell>
+        <mxCell id="6" source="3" target="5" parent="1" edge="1"/>
+        <mxCell id="7" value="Switch L2&#xa;VLAN 10&#xa;REDE_INTERNA" style="shape=switch;whiteSpace=wrap" parent="1" vertex="1">
+          <mxGeometry x="60" y="400" width="80" height="80"/>
+        </mxCell>
+        <mxCell id="8" value="Switch L2&#xa;VLAN 20&#xa;REDE_FINANCEIRO" style="shape=switch;whiteSpace=wrap" parent="1" vertex="1">
+          <mxGeometry x="260" y="400" width="80" height="80"/>
+        </mxCell>
+        <mxCell id="9" source="5" target="7" parent="1" edge="1"/>
+        <mxCell id="10" source="5" target="8" parent="1" edge="1"/>
+        <mxCell id="11" value="PC1&#xa;192.168.1.10" style="shape=pc;whiteSpace=wrap" parent="1" vertex="1">
+          <mxGeometry x="80" y="520" width="40" height="60"/>
+        </mxCell>
+        <mxCell id="12" value="PC2&#xa;192.168.2.20" style="shape=pc;whiteSpace=wrap" parent="1" vertex="1">
+          <mxGeometry x="280" y="520" width="40" height="60"/>
+        </mxCell>
+        <mxCell id="13" source="7" target="11" parent="1" edge="1"/>
+        <mxCell id="14" source="8" target="12" parent="1" edge="1"/>
       </root>
     </mxGraphModel>
   </diagram>
