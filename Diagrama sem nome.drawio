@@ -1,36 +1,55 @@
-<mxfile>
-  <diagram name="Página-1">
-    <mxGraphModel>
+<mxfile host="app.diagrams.net" modified="2023-01-01T00:00:00.000Z" agent="Mozilla/5.0" version="20.7.3">
+  <diagram name="Topologia Corporativa" id="0">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-        <mxCell id="2" value="Internet" style="shape=cloud;whiteSpace=wrap;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="160" y="40" width="120" height="80"/>
+        <!-- Internet -->
+        <mxCell id="internet" value="Internet" style="shape=cloud;whiteSpace=wrap;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="120" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="3" value="Roteador Gateway&#xa;NAT/ACL/OSPF" style="shape=router;whiteSpace=wrap" parent="1" vertex="1">
-          <mxGeometry x="180" y="160" width="80" height="80"/>
+        
+        <!-- Roteador -->
+        <mxCell id="router" value="&lt;b&gt;Roteador Gateway&lt;/b&gt;&lt;br&gt;NAT/OSPF/ACL" style="shape=router;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="140" width="80" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="4" source="2" target="3" parent="1" edge="1"/>
-        <mxCell id="5" value="Switch L3&#xa;VLAN 10/20&#xa;OSPF" style="shape=switch;whiteSpace=wrap" parent="1" vertex="1">
-          <mxGeometry x="180" y="280" width="80" height="80"/>
+        <mxCell id="link1" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="internet" target="router">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="6" source="3" target="5" parent="1" edge="1"/>
-        <mxCell id="7" value="Switch L2&#xa;VLAN 10&#xa;REDE_INTERNA" style="shape=switch;whiteSpace=wrap" parent="1" vertex="1">
-          <mxGeometry x="60" y="400" width="80" height="80"/>
+
+        <!-- Switch L3 -->
+        <mxCell id="switchL3" value="&lt;b&gt;Switch Camada 3&lt;/b&gt;&lt;br&gt;VLAN 10/20" style="shape=switch;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="260" width="80" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="8" value="Switch L2&#xa;VLAN 20&#xa;REDE_FINANCEIRO" style="shape=switch;whiteSpace=wrap" parent="1" vertex="1">
-          <mxGeometry x="260" y="400" width="80" height="80"/>
+        <mxCell id="link2" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="router" target="switchL3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="9" source="5" target="7" parent="1" edge="1"/>
-        <mxCell id="10" source="5" target="8" parent="1" edge="1"/>
-        <mxCell id="11" value="PC1&#xa;192.168.1.10" style="shape=pc;whiteSpace=wrap" parent="1" vertex="1">
-          <mxGeometry x="80" y="520" width="40" height="60"/>
+
+        <!-- Switches L2 -->
+        <mxCell id="switchVLAN10" value="&lt;b&gt;Switch VLAN 10&lt;/b&gt;&lt;br&gt;REDE_INTERNA" style="shape=switch;whiteSpace=wrap;html=1;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="100" y="380" width="80" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="12" value="PC2&#xa;192.168.2.20" style="shape=pc;whiteSpace=wrap" parent="1" vertex="1">
-          <mxGeometry x="280" y="520" width="40" height="60"/>
+        <mxCell id="switchVLAN20" value="&lt;b&gt;Switch VLAN 20&lt;/b&gt;&lt;br&gt;REDE_FINANCEIRO" style="shape=switch;whiteSpace=wrap;html=1;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="340" y="380" width="80" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="13" source="7" target="11" parent="1" edge="1"/>
-        <mxCell id="14" source="8" target="12" parent="1" edge="1"/>
+        <mxCell id="link3" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="switchL3" target="switchVLAN10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link4" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="switchL3" target="switchVLAN20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- PCs -->
+        <mxCell id="pc1" value="&lt;b&gt;PC1&lt;/b&gt;&lt;br&gt;192.168.1.10" style="shape=pc;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="500" width="40" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="pc2" value="&lt;b&gt;PC2&lt;/b&gt;&lt;br&gt;192.168.2.20" style="shape=pc;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="500" width="40" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="link5" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="switchVLAN10" target="pc1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link6" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="switchVLAN20" target="pc2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
